@@ -196,7 +196,7 @@ const state = {
   values: {}
 };
 
-const form = document.querySelector("#onboarding-form");
+const form = document.querySelector("#enquiry-form");
 const formMount = document.querySelector("#formMount");
 const formActions = document.querySelector(".form-actions");
 const progressText = document.querySelector("#progressText");
@@ -667,7 +667,8 @@ form.addEventListener("submit", async (event) => {
     successDialog.showModal();
     renderSelectedForm();
   } catch (error) {
-    showToast(error.message);
+    console.error(error);
+    showToast(error.message || "Failed to submit enquiry");
   } finally {
     form.classList.remove("is-submitting");
     submitButton.disabled = false;
