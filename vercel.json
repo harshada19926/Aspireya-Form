@@ -1,0 +1,9 @@
+{
+  "cleanUrls": true,
+  "rewrites": [
+    {
+      "source": "/api/enquiries",
+      "destination": "/api/enquiries.js"
+    }
+  ]
+}

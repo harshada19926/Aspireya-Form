@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Aspireya Career Counselling enquiry form for institutes, colleges, and corporates."
+    />
+    <title>Aspireya Enquiry Form</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+    <script>
+      window.ASPIREYA_CONFIG = {
+        submissionEndpoint: "/api/enquiries",
+        emailjs: {
+          publicKey: "WxUb8fOme1whGNC6_",
+          serviceId: "service_cj5nd98",
+          templateId: "template_q9r7rzi"
+        }
+      };
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  </head>
+  <body>
+    <main class="page-shell">
+      <section class="form-hero" aria-labelledby="page-title">
+        <div class="brand-lockup" aria-label="Aspireya Career Counselling">
+          <span class="brand-mark">A</span>
+          <span>Aspireya Career Counselling</span>
+        </div>
+        <h1 id="page-title">Aspireya Enquiry Form</h1>
+        <p>Please select enquiry type to continue</p>
+      </section>
+
+      <section class="enquiry-panel" aria-label="Aspireya enquiry form">
+        <aside class="progress-card" aria-label="Form progress">
+          <div>
+            <span class="progress-label">Progress</span>
+            <strong id="progressText">0% complete</strong>
+          </div>
+          <div class="progress-track" aria-hidden="true">
+            <span id="progressBar"></span>
+          </div>
+          <p id="draftStatus">Draft saves automatically on this device.</p>
+        </aside>
+
+        <div class="selector-section">
+          <div class="section-heading">
+            <span>Section 1</span>
+            <h2>Enquiry Type Selector</h2>
+          </div>
+
+          <div class="type-grid" role="radiogroup" aria-label="Select enquiry type">
+            <label class="type-card" data-type-card="institute">
+              <input type="radio" name="enquiryType" value="institute" />
+              <span class="type-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24">
+                  <path d="M4 21V7.8L12 3l8 4.8V21" />
+                  <path d="M8 21v-7h8v7" />
+                  <path d="M9 9.5h.01M12 9.5h.01M15 9.5h.01" />
+                </svg>
+              </span>
+              <span class="type-copy">
+                <strong>Institute</strong>
+                <small>Schools, Training Institutes, Coaching Institutes</small>
+              </span>
+              <span class="radio-dot" aria-hidden="true"></span>
+            </label>
+
+            <label class="type-card" data-type-card="college">
+              <input type="radio" name="enquiryType" value="college" />
+              <span class="type-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24">
+                  <path d="M3 10.5 12 5l9 5.5-9 5.5-9-5.5Z" />
+                  <path d="M6 13v4.2c1.7 1.2 3.7 1.8 6 1.8s4.3-.6 6-1.8V13" />
+                  <path d="M21 10.5V17" />
+                </svg>
+              </span>
+              <span class="type-copy">
+                <strong>College</strong>
+                <small>Colleges, Universities, Higher Education Institutions</small>
+              </span>
+              <span class="radio-dot" aria-hidden="true"></span>
+            </label>
+
+            <label class="type-card" data-type-card="corporate">
+              <input type="radio" name="enquiryType" value="corporate" />
+              <span class="type-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24">
+                  <path d="M4 21V5a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v16" />
+                  <path d="M17 8h1a2 2 0 0 1 2 2v11" />
+                  <path d="M8 7h5M8 11h5M8 15h5M9 21v-3h3v3" />
+                </svg>
+              </span>
+              <span class="type-copy">
+                <strong>Corporate</strong>
+                <small>Companies, Organizations, Businesses</small>
+              </span>
+              <span class="radio-dot" aria-hidden="true"></span>
+            </label>
+          </div>
+        </div>
+
+        <form id="onboarding-form" class="dynamic-form" novalidate>
+          <div id="formMount" class="form-mount" aria-live="polite"></div>
+
+          <div class="form-actions" hidden>
+            <button class="secondary-button" type="button" id="resetButton">Reset Form</button>
+            <button class="primary-button" type="submit" id="submitButton">
+              <span class="button-text">Submit Enquiry</span>
+              <span class="spinner" aria-hidden="true"></span>
+            </button>
+          </div>
+        </form>
+      </section>
+    </main>
+
+    <div class="toast" id="toast" role="status" aria-live="polite" aria-atomic="true"></div>
+
+    <dialog class="success-dialog" id="successDialog">
+      <div class="success-icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24">
+          <path d="m5 12 4 4L19 6" />
+        </svg>
+      </div>
+      <h2>Enquiry submitted successfully</h2>
+      <p>Thank you for contacting Aspireya. Our team will review your enquiry and get back to you soon.</p>
+      <button class="primary-button" type="button" id="closeSuccess">Done</button>
+    </dialog>
+
+    <script src="./script.js" defer></script>
+  </body>
+</html>
